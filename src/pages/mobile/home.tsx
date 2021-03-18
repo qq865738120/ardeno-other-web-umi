@@ -1,5 +1,5 @@
 import { Button } from 'antd-mobile';
-import React, { FC, useEffect } from 'react';
+import React, { FC } from 'react';
 import { AppModelState, connect, ConnectProps, history, Loading } from 'umi';
 import styles from './home.less';
 
@@ -15,7 +15,6 @@ const HomePage: FC<PageProps> = ({ app, loading, dispatch }) => {
   };
 
   const onSetNameClick = () => {
-    // dispatch && dispatch({ type: 'app/save', payload: 'aaaaa' })
     dispatch && dispatch({ type: 'app/query' });
   };
 
@@ -31,9 +30,7 @@ const HomePage: FC<PageProps> = ({ app, loading, dispatch }) => {
   );
 };
 
-export default connect(
-  ({ app, loading }: { app: AppModelState; loading: Loading }) => ({
-    app,
-    loading: loading.models.app,
-  }),
-)(HomePage);
+export default connect(({ app, loading }: { app: AppModelState; loading: Loading }) => ({
+  app,
+  loading: loading.models.app,
+}))(HomePage);

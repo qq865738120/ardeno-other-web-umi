@@ -12,6 +12,7 @@
 
 # misc
 .DS_Store
+.eslintcache
 
 # umi
 /src/.umi

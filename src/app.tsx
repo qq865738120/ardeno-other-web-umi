@@ -1,7 +1,7 @@
-import { RequestConfig, history } from 'umi';
+import { RequestConfig } from 'umi';
 
 export const request: RequestConfig = {
-  prefix: API_HOST + '/api/0',
+  prefix: `${API_HOST  }/api/0`,
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json',

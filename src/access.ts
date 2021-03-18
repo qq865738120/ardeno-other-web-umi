@@ -1,4 +1,4 @@
-import { InitialState } from './app';
+import type { InitialState } from './app';
 
 /**
  * 更细粒度的权限控制

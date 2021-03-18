@@ -1,5 +1,3 @@
-/node_modules
-/npm-debug.log*
-/yarn-error.log
-/yarn.lock
-/package-lock.json
+.eslintrc.js
+typings.d.ts
+.eslintcache

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'umi';
-import { Divider, Typography } from 'antd';
+import { Typography } from 'antd';
+
 const { Title, Paragraph } = Typography;
 
 const IndxPage = (props: any) => {
@@ -10,6 +11,7 @@ const IndxPage = (props: any) => {
         padding: '0 20px',
       }}
     >
+      <div />
       <Typography>
         <Title>目录</Title>
         <Paragraph>
@@ -38,9 +40,7 @@ const IndxPage = (props: any) => {
           justifyContent: 'center',
         }}
       >
-        <Typography.Link href="http://beian.miit.gov.cn/">
-          鄂ICP备17003728号-3
-        </Typography.Link>
+        <Typography.Link href="http://beian.miit.gov.cn/">鄂ICP备17003728号-3</Typography.Link>
       </div>
     </section>
   );

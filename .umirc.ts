@@ -6,7 +6,6 @@ export default defineConfig({
   // },
   dva: {
     hmr: true,
-    immer: true,
   },
   nodeModulesTransform: {
     type: 'none',

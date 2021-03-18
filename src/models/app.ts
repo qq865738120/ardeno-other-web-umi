@@ -1,5 +1,5 @@
 import { queryEventList } from '@/services/test';
-import { Effect, ImmerReducer, Reducer, Subscription } from 'umi';
+import type { Effect, ImmerReducer, Subscription } from 'umi';
 
 export interface AppModelState {
   name: string;
@@ -33,10 +33,11 @@ const AppModel: AppModelType = {
     },
   },
   reducers: {
-    save(state, actions) {
-      console.log('actions', actions);
-
-      state.name = actions.payload;
+    save(state, action) {
+      return {
+        ...state,
+        ...action.payload,
+      };
     },
   },
   subscriptions: {

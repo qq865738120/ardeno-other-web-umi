@@ -1,6 +1,6 @@
 import { Button } from 'antd';
-import React, { FC, useEffect } from 'react';
-import { AppModelState, connect, ConnectProps, history, Loading } from 'umi';
+import React, { FC } from 'react';
+import { AppModelState, connect, ConnectProps, Dispatch, history, Loading } from 'umi';
 import styles from './home.less';
 
 interface PageProps extends ConnectProps {
@@ -15,8 +15,7 @@ const HomePage: FC<PageProps> = ({ app, loading, dispatch }) => {
   };
 
   const onSetNameClick = () => {
-    // dispatch && dispatch({ type: 'app/save', payload: 'aaaaa' })
-    dispatch && dispatch({ type: 'app/query' });
+    (dispatch as Dispatch)({ type: 'app/query' });
   };
 
   return (
@@ -31,9 +30,7 @@ const HomePage: FC<PageProps> = ({ app, loading, dispatch }) => {
   );
 };
 
-export default connect(
-  ({ app, loading }: { app: AppModelState; loading: Loading }) => ({
-    app,
-    loading: loading.models.app,
-  }),
-)(HomePage);
+export default connect(({ app, loading }: { app: AppModelState; loading: Loading }) => ({
+  app,
+  loading: loading.models.app,
+}))(HomePage);
