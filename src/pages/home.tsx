@@ -1,4 +1,4 @@
-import hooks from '@/hooks';
+import hooks from "@/hooks";
 
 const HomePage = (props: any) => {
   hooks.useAdaptation(props);

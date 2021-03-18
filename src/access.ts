@@ -1,4 +1,4 @@
-import type { InitialState } from './app';
+import type { InitialState } from "./app";
 
 /**
  * 更细粒度的权限控制
@@ -9,7 +9,7 @@ export default (initialState: InitialState) => {
   return {
     isLogin,
     canReadUser: (user: any) => {
-      console.log('1112', user.userId === userId, userId, user);
+      console.log("1112", user.userId === userId, userId, user);
       return user.userId === userId;
     },
   };

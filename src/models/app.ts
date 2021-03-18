@@ -1,12 +1,12 @@
-import { queryEventList } from '@/services/test';
-import type { Effect, ImmerReducer, Subscription } from 'umi';
+import { queryEventList } from "@/services/test";
+import type { Effect, ImmerReducer, Subscription } from "umi";
 
 export interface AppModelState {
   name: string;
 }
 
 export interface AppModelType {
-  namespace: 'app';
+  namespace: "app";
   state: AppModelState;
   effects: {
     query: Effect;
@@ -20,16 +20,16 @@ export interface AppModelType {
 }
 
 const AppModel: AppModelType = {
-  namespace: 'app',
+  namespace: "app",
   state: {
-    name: 'test name',
+    name: "test name",
   },
   effects: {
     *query(action, effects) {
       const res = yield effects.call(queryEventList);
-      console.log('res', res);
+      console.log("res", res);
 
-      yield effects.put({ type: 'save', payload: res[0].id });
+      yield effects.put({ type: "save", payload: res[0].id });
     },
   },
   reducers: {

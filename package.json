@@ -9,20 +9,17 @@
     "test": "umi-test",
     "test:coverage": "umi-test --coverage",
     "serve": "serve ./dist",
-    "lint": "eslint . --ext .tsx,.ts --fix"
+    "lint": "eslint . --ext .tsx,.ts --fix",
+    "lint:staged": "lint-staged",
+    "prepare": "husky install"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
-    "*.{js,jsx,less,md,json}": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.ts?(x)": [
-      "prettier --parser=typescript --write",
-      "yarn lint",
-      "git add"
+    "*.{js,jsx,less,md,json,ts,tsx}": [
+      "npm run prettier",
+      "npm run lint"
     ]
   },
   "husky": {

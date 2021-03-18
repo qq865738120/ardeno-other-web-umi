@@ -1,3 +1,10 @@
 .eslintrc.js
 typings.d.ts
 .eslintcache
+.stylelintrc.js
+.prettierrc.js
+.umirc.dev.ts
+.umirc.prod.ts
+.umirc.ts
+package.json
+typings.d.ts

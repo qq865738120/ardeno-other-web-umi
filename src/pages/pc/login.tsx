@@ -1,5 +1,5 @@
-import styles from './login.less';
-import { Link } from 'umi';
+import styles from "./login.less";
+import { Link } from "umi";
 
 export default function LoginPage() {
   return (

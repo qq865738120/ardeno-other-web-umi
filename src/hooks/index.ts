@@ -1,4 +1,4 @@
-import useAdaptation from './useAdaptation';
+import useAdaptation from "./useAdaptation";
 
 export default {
   useAdaptation,

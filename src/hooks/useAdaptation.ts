@@ -1,6 +1,6 @@
-import utils from '@/utils';
-import { useCallback, useEffect } from 'react';
-import { history } from 'umi';
+import utils from "@/utils";
+import { useCallback, useEffect } from "react";
+import { history } from "umi";
 
 const useAdaptation = (props: any) => {
   const onresize = useCallback(() => {

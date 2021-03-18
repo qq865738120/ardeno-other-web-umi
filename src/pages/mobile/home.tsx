@@ -1,7 +1,7 @@
-import { Button } from 'antd-mobile';
-import React, { FC } from 'react';
-import { AppModelState, connect, ConnectProps, history, Loading } from 'umi';
-import styles from './home.less';
+import { Button } from "antd-mobile";
+import React, { FC } from "react";
+import { AppModelState, connect, ConnectProps, Dispatch, history, Loading } from "umi";
+import styles from "./home.less";
 
 interface PageProps extends ConnectProps {
   app: AppModelState;
@@ -11,11 +11,11 @@ interface PageProps extends ConnectProps {
 const HomePage: FC<PageProps> = ({ app, loading, dispatch }) => {
   const onGoTestClick = () => {
     console.log(APP_ENV);
-    history.push('/test');
+    history.push("/test");
   };
 
   const onSetNameClick = () => {
-    dispatch && dispatch({ type: 'app/query' });
+    (dispatch as Dispatch)({ type: "app/query" });
   };
 
   return (

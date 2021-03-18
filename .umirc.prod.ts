@@ -1,31 +1,31 @@
-import { defineConfig } from 'umi';
+import { defineConfig } from "umi";
 
 export default defineConfig({
   define: {
-    APP_ENV: 'prod',
-    API_HOST: 'http://sentry.dev.pt.hydee.cn',
+    APP_ENV: "prod",
+    API_HOST: "http://sentry.dev.pt.hydee.cn",
   },
   hash: true,
-  chunks: ['commons', 'libs', 'vendors', 'umi'],
+  chunks: ["commons", "libs", "vendors", "umi"],
   chainWebpack: function (config, { webpack }) {
     config.merge({
       optimization: {
         splitChunks: {
-          chunks: 'all',
+          chunks: "all",
           maxInitialRequests: Infinity,
           minSize: 0,
           cacheGroups: {
             commons: {
               test: /[\\/]node_modules[\\/]/,
-              name: 'commons',
+              name: "commons",
             },
             libs: {
               test: /[\\/]node_modules[\\/](react-redux|react-helment|redux-saga|redux|dva|dva-core|immer|umi-request|umi|core-js)[\\/]/,
-              name: 'libs',
+              name: "libs",
             },
             vendors: {
               test: /[\\/]node_modules[\\/](react|react-dom|antd|@ant-design|antd-mobile)[\\/]/,
-              name: 'vendors',
+              name: "vendors",
             },
           },
         },

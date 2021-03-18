@@ -1,5 +1,5 @@
-import styles from './test.less';
-import { Link } from 'umi';
+import styles from "./test.less";
+import { Link } from "umi";
 
 export default function TestPage() {
   return (
