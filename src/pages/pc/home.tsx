@@ -14,7 +14,6 @@ const HomePage: FC<PageProps> = ({ app, loading, dispatch }) => {
     history.push('/test');
   };
 
-
   const onSetNameClick = () => {
     (dispatch as Dispatch)({ type: 'app/query' });
   };
