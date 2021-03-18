@@ -19,4 +19,4 @@ const useAdaptation = (props: any) => {
   };
 };
 
-export default useAdaptation
+export default useAdaptation;

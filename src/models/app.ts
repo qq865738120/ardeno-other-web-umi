@@ -22,28 +22,28 @@ export interface AppModelType {
 const AppModel: AppModelType = {
   namespace: 'app',
   state: {
-    name: 'test name'
+    name: 'test name',
   },
   effects: {
-    * query(action, effects) {
-      const res = yield effects.call(queryEventList)
+    *query(action, effects) {
+      const res = yield effects.call(queryEventList);
       console.log('res', res);
 
-      yield effects.put({ type: 'save', payload: res[0].id })
-    }
+      yield effects.put({ type: 'save', payload: res[0].id });
+    },
   },
   reducers: {
     save(state, actions) {
       console.log('actions', actions);
 
-      state.name = actions.payload
-    }
+      state.name = actions.payload;
+    },
   },
   subscriptions: {
     // setup(api) {
     //   api.dispatch()
     // }
-  }
-}
+  },
+};
 
-export default AppModel
+export default AppModel;

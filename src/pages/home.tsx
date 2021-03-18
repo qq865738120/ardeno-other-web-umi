@@ -1,7 +1,7 @@
 import hooks from '@/hooks';
 
 const HomePage = (props: any) => {
-  hooks.useAdaptation(props)
+  hooks.useAdaptation(props);
   return <>{props.children}</>;
 };
 

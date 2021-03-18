@@ -9,28 +9,31 @@ interface PageProps extends ConnectProps {
 }
 
 const HomePage: FC<PageProps> = ({ app, loading, dispatch }) => {
-
   const onGoTestClick = () => {
     console.log(APP_ENV);
-    history.push('/test')
-  }
+    history.push('/test');
+  };
 
   const onSetNameClick = () => {
     // dispatch && dispatch({ type: 'app/save', payload: 'aaaaa' })
-    dispatch && dispatch({ type: 'app/query' })
-  }
+    dispatch && dispatch({ type: 'app/query' });
+  };
 
   return (
     <div>
       <h1 className={styles.title2}>Mobile Page index{APP_ENV}</h1>
       <h1 className={styles.title2}>name {app.name}</h1>
       <div onClick={onGoTestClick}>跳转test</div>
-      <Button onClick={onSetNameClick} loading={loading}>设置name</Button>
+      <Button onClick={onSetNameClick} loading={loading}>
+        设置name
+      </Button>
     </div>
   );
-}
+};
 
-export default connect(({ app, loading }: { app: AppModelState; loading: Loading }) => ({
-  app,
-  loading: loading.models.app,
-}))(HomePage)
+export default connect(
+  ({ app, loading }: { app: AppModelState; loading: Loading }) => ({
+    app,
+    loading: loading.models.app,
+  }),
+)(HomePage);
