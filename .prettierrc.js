@@ -4,7 +4,7 @@ module.exports = {
   ...fabric.prettier,
   singleQuote: false,
   trailingComma: "all",
-  printWidth: 120,
+  printWidth: 80,
   tabWidth: 2,
   useTabs: false,
   bracketSpacing: true,

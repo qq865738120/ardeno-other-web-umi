@@ -11,7 +11,10 @@ module.exports = {
     "no-unused-vars": ["error"],
     "no-var": ["warn"],
     "no-console": 0,
-    "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx", ".tsx"] }],
+    "react/jsx-filename-extension": [
+      1,
+      { extensions: [".js", ".jsx", ".tsx"] },
+    ],
     "@typescript-eslint/no-use-before-define": 0,
     "@typescript-eslint/no-unused-vars": 0,
     "@typescript-eslint/member-delimiter-style": 0,
