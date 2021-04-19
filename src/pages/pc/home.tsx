@@ -1,6 +1,13 @@
 import { Button } from "antd";
 import React, { FC } from "react";
-import { AppModelState, connect, ConnectProps, Dispatch, history, Loading } from "umi";
+import {
+  AppModelState,
+  connect,
+  ConnectProps,
+  Dispatch,
+  history,
+  Loading,
+} from "umi";
 import styles from "./home.less";
 
 interface PageProps extends ConnectProps {
@@ -30,7 +37,9 @@ const HomePage: FC<PageProps> = ({ app, loading, dispatch }) => {
   );
 };
 
-export default connect(({ app, loading }: { app: AppModelState; loading: Loading }) => ({
-  app,
-  loading: loading.models.app,
-}))(HomePage);
+export default connect(
+  ({ app, loading }: { app: AppModelState; loading: Loading }) => ({
+    app,
+    loading: loading.models.app,
+  }),
+)(HomePage);

@@ -49,6 +49,11 @@ export default defineConfig({
       title: "登陆页",
       component: "@/pages/pc/login",
     },
+    {
+      path: "/propose-marriage",
+      title: "待定",
+      component: "@/pages/mobile/propose_marriage",
+    },
   ],
   fastRefresh: {},
 });

@@ -5,11 +5,11 @@
     "build": "cross-env UMI_ENV=prod umi build",
     "build:analyze": "cross-env UMI_ENV=prod ANALYZE=1 umi build",
     "postinstall": "umi generate tmp",
-    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
+    "prettier": "prettier --write .",
     "test": "umi-test",
     "test:coverage": "umi-test --coverage",
     "serve": "serve ./dist",
-    "lint": "eslint . --ext .tsx,.ts --fix",
+    "lint": "eslint . --ext .tsx,.ts --fix --ignore-path .eslintignore",
     "lint:staged": "lint-staged",
     "prepare": "husky install"
   },
@@ -22,16 +22,14 @@
       "npm run lint"
     ]
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "dependencies": {
     "@ant-design/pro-layout": "^6.5.0",
+    "@mojs/core": "^0.288.2",
     "@umijs/preset-react": "1.x",
     "antd": "^4.14.0",
     "antd-mobile": "^2.3.4",
+    "swiper": "^6.5.0",
+    "typed.js": "^2.0.11",
     "umi": "^3.4.2"
   },
   "devDependencies": {

@@ -40,7 +40,9 @@ const IndxPage = (props: any) => {
           justifyContent: "center",
         }}
       >
-        <Typography.Link href="http://beian.miit.gov.cn/">鄂ICP备17003728号-3</Typography.Link>
+        <Typography.Link href="http://beian.miit.gov.cn/">
+          鄂ICP备17003728号-3
+        </Typography.Link>
       </div>
     </section>
   );
