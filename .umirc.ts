@@ -52,7 +52,7 @@ export default defineConfig({
     {
       path: "/propose-marriage",
       title: "待定",
-      component: "@/pages/mobile/propose_marriage",
+      component: "@/pages/mobile/propose_marriage/index",
     },
   ],
   fastRefresh: {},

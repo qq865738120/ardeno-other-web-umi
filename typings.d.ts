@@ -17,3 +17,5 @@ declare const APP_ENV: "local" | "cloud";
  * 接口域名
  */
 declare const API_HOST: string;
+
+declare module '@mojs/core'
