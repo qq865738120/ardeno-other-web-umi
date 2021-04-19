@@ -31,5 +31,16 @@ export default defineConfig({
         },
       },
     });
+
+    config.plugin("CompressionPlugin").use(require("compression-webpack-plugin"), [
+      {
+        filename: "[path][base].gz",
+        algorithm: "gzip",
+        test: /\.(js|css|html|svg)$/,
+        threshold: 1024,
+        minRatio: 0.8,
+        deleteOriginalAssets: false,
+      },
+    ]);
   },
 });
