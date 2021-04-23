@@ -55,7 +55,6 @@ function useMojsBg() {
 
   useEffect(() => {
     mojs.addShape("heart", Heart);
-
     // eslint-disable-next-line no-plusplus
     for (let index = 0; index < COUNT; index++) {
       heartArr.current.push({
@@ -150,7 +149,6 @@ function useMojsBg() {
         paly(index);
       }, randomHeartArr[index] * 10 * 1000);
     }
-
     // eslint-disable-next-line no-plusplus
     for (let index = 0; index < FIRE_COUNT; index++) {
       fireArr.current.push({

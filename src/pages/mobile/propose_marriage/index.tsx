@@ -2,8 +2,6 @@ import React, { FC, useEffect, useRef } from "react";
 import { AppModelState, connect, ConnectProps, Loading } from "umi";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { EffectFade } from "swiper";
-import Typed from "typed.js";
-import mojs from "@mojs/core";
 
 import styles from "./index.less";
 import "swiper/swiper.less";
@@ -11,6 +9,8 @@ import "swiper/components/effect-fade/effect-fade.less";
 import useMojsBg from "./hooks/useMojsBg";
 
 import heroGlowSvg from "@/assets/images/hero_glow.svg";
+import useTyped from "./hooks/useTyped";
+import moment from "moment";
 
 interface PageProps extends ConnectProps {
   app: AppModelState;
@@ -20,11 +20,12 @@ interface PageProps extends ConnectProps {
 SwiperCore.use([EffectFade]);
 
 const ProposeMarriagePage: FC<PageProps> = () => {
+  const word2 = useRef<string[]>([]);
   const bgAnimDom = useRef<any>();
   useMojsBg();
-
-  useEffect(() => {
-    const typed = new Typed("#word1", {
+  useTyped({
+    element: "#word1",
+    options: {
       // strings: [
       //   "git push --force ^500 pushed to origin with option force",
       //   "This is a JavaScript library",
@@ -32,13 +33,7 @@ const ProposeMarriagePage: FC<PageProps> = () => {
       // ],
       strings: [
         `
-        你好吗你好吗你好吗你。
-        <br />
-        士大夫士大夫士大夫士大夫。
-        <br />
-        哈哈哈哈哈哈哈。
-        <br />
-        六六六。
+
         `,
       ],
       typeSpeed: 80,
@@ -47,39 +42,46 @@ const ProposeMarriagePage: FC<PageProps> = () => {
       autoInsertCss: true,
       // cursorChar: "_",
       smartBackspace: true,
-    });
-    return () => {
-      typed.destroy();
-    };
+    },
+  });
+
+  useEffect(() => {
+    moment("")
+    const currentTime = moment()
+    const lastTime = moment('2017-03-20')
+    // eslint-disable-next-line no-plusplus
+    for (let index = 0; index < 24 * 60 * 60; index++) {
+      currentTime.add(1, 's')
+      const tempTime = moment.duration(currentTime.format('x') as any - (lastTime.format('x') as any))
+      let str = "";
+      str += `在一起：<br />`
+      str += `${currentTime.diff(lastTime, 'days')}天<br />`;
+      str += `${tempTime.hours()}时`;
+      str += `${tempTime.minutes()}分`;
+      str += `${tempTime.seconds()}秒`;
+      word2.current.push(str);
+    }
   }, []);
-
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     mojsBg.onPaly()
-  //   }, 1000);
-  // }, [mojsBg])
-
-  // useEffect(() => {
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  //   bgAnimObj = new mojs.Shape({
-  //     parent: bgAnimDom.current,
-  //     shape: "circle",
-  //     scale: { 0: 1 },
-  //     duration: 1000,
-  //     // delay: 1000,
-  //     easing: "cubic.inout",
-  //     onComplete() {
-  //       console.log('完成', bgAnimObj);
-  //       bgAnimObj.replay()
-  //     }
-  //   }).play();
-
-  //   console.log(bgAnimObj);
-
-  //   // return () => {
-  //   //   bgAnimObj.current.
-  //   // }
-  // }, []);
+  const typed2 = useTyped({
+    element: "#word2",
+    options: {
+      strings: word2.current,
+      typeSpeed: 80,
+      backSpeed: 20,
+      startDelay: 1000,
+      autoInsertCss: true,
+      // cursorChar: "_",
+      smartBackspace: true,
+    },
+  });
+  setTimeout(() => {
+    typed2.current?.stop()
+  }, 100);
+  const onTransitionEnd = (swiper: any) => {
+    if (swiper.activeIndex === 1) {
+      typed2.current?.start()
+    }
+  }
 
   return (
     <main className={styles.content}>
@@ -91,18 +93,25 @@ const ProposeMarriagePage: FC<PageProps> = () => {
         // effect="fade"
         direction="vertical"
         className={styles.swiperContainer}
+        onTransitionEnd={onTransitionEnd}
       >
         <SwiperSlide>
           <div className={`${styles.page}`}>
             <div className={styles.pageContent}>
-              <div className={styles.word1}>
+              <div className={styles.word}>
                 <span id="word1" />
               </div>
             </div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className={`${styles.page}`}>page 2</div>
+          <div className={`${styles.page}`}>
+            <div className={styles.pageContent}>
+              <div className={styles.word}>
+                <span id="word2" />
+              </div>
+            </div>
+          </div>
         </SwiperSlide>
         <SwiperSlide>
           <div className={`${styles.page}`}>page 3</div>
