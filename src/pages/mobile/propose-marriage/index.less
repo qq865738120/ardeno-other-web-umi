@@ -1,0 +1,86 @@
+@color1: #ff7473;
+@color2: #ffc952;
+@color3: #47b8e0;
+@color4: #34314c;
+
+@font-face {
+  font-family: 'Dotted-Songti-Circle-Regular';
+  src:
+    url('~@/assets/fonts/DottedSongtiCircleRegular.ttf') format('truetype'),
+    url('~@/assets/fonts/DottedSongtiCircleRegular.woff') format('woff'),
+    url('~@/assets/fonts/DottedSongtiCircleRegular.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.content {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.swiperContainer {
+  position: unset !important;
+}
+
+.page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // backdrop-filter: blur(2px);
+}
+
+.pageContent {
+  width: 320px;
+  // height: 500px;
+  padding: 10px 20px;
+  // border: 1px solid;
+  border-radius: 10px;
+  background-color: rgba(52, 49, 76, 0.3);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 6px 20px -6px rgba(0, 0, 0, 0.1);
+  // overflow: hidden;
+  position: absolute;
+}
+
+.bg {
+  position: absolute;
+  z-index: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #24292e;
+}
+
+.bgImage {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  height: 190%;
+  transform: translate(-50%,-50%);
+}
+
+.word {
+  font-family: 'Dotted-Songti-Circle-Regular';
+  font-size: 32px;
+  // font-weight: 100;
+  color: white;
+  animation: shining 0.1s alternate infinite;
+}
+
+@keyframes shining {
+  from {
+    text-shadow: 0 0 6px rgba(182, 211, 207, 0.9),
+      0 0 30px rgba(182, 211, 207, 0.3), 0 0 12px rgba(15, 115, 223, 0.5),
+      0 0 21px rgba(15, 115, 223, 0.9), 0 0 34px rgba(15, 115, 223, 0.8),
+      0 0 54px rgba(15, 115, 223, 0.9);
+  }
+  to {
+    text-shadow: 0 0 6px rgba(182, 211, 207, 1),
+      0 0 30px rgba(182, 211, 207, 0.4), 0 0 12px rgba(15, 115, 223, 0.6),
+      0 0 22px rgba(15, 115, 223, 0.8), 0 0 38px rgba(15, 115, 223, 0.9),
+      0 0 60px rgba(15, 115, 223, 1);
+  }
+}
