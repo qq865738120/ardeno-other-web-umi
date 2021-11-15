@@ -1,4 +1,4 @@
-import { Button } from "antd-mobile";
+// import { Button } from "antd-mobile";
 import React, { FC } from "react";
 import {
   AppModelState,
@@ -30,9 +30,9 @@ const HomePage: FC<PageProps> = ({ app, loading, dispatch }) => {
       <h1 className={styles.title2}>Mobile Page index{APP_ENV}</h1>
       <h1 className={styles.title2}>name {app.name}</h1>
       <div onClick={onGoTestClick}>跳转test</div>
-      <Button onClick={onSetNameClick} loading={loading}>
+      {/* <Button onClick={onSetNameClick} loading={loading}>
         设置name
-      </Button>
+      </Button> */}
     </div>
   );
 };

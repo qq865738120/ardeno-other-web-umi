@@ -28,7 +28,7 @@ const routes = [
   {
     path: "/login",
     title: "登陆页",
-    component: "@/pages/pc/login",
+    component: "@/pages/mobile/login",
   },
   {
     path: "/propose-marriage",

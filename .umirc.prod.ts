@@ -3,7 +3,7 @@ import { defineConfig } from "umi";
 export default defineConfig({
   define: {
     APP_ENV: "prod",
-    API_HOST: "http://sentry.dev.pt.hydee.cn",
+    API_HOST: "https://server.ddnszwj.top",
   },
   hash: true,
   chunks: ["commons", "libs", "vendors", "umi"],

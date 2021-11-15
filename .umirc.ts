@@ -5,6 +5,7 @@ export default defineConfig({
   // antd: {
   //   dark: true,
   // },
+  antd: false,
   dva: {
     hmr: true,
   },
