@@ -41,7 +41,7 @@ const IndxPage = (props: any) => {
         }}
       >
         <Typography.Link href="http://beian.miit.gov.cn/">
-          鄂ICP备17003728号-3
+          湘ICP备2022000418号
         </Typography.Link>
       </div>
     </section>
