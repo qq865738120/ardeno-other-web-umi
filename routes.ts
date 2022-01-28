@@ -32,7 +32,7 @@ const routes = [
   },
   {
     path: "/propose-marriage",
-    title: "待定",
+    title: "zwj&syy",
     component: "@/pages/mobile/propose-marriage/index",
   },
   {
