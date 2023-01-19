@@ -1,0 +1,55 @@
+@import '../../../styles/theme.less';
+
+.ledger-page {
+  // padding: @mobile-paddingTB @mobile-paddingLR;
+  position: relative;
+}
+
+.loading-box {
+  width: 100vw;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-size: 18px;
+  margin: 12px 0 10px;
+  font-weight: bold;
+}
+
+.content-box {
+  background-color: white;
+  margin: @mobile-paddingTB @mobile-paddingLR 0;
+  border-radius: 4px;
+  padding: @mobile-paddingTB @mobile-paddingLR;
+}
+
+.desc {
+  font-size: 30px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+}
+.line-left {
+  font-size: 14px;
+  color: #999;
+}
+.line-right {
+  font-size: 14px;
+  color: #3a3a3a;
+  width: 100px;
+}

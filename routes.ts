@@ -36,6 +36,11 @@ const routes = [
     component: "@/pages/mobile/propose-marriage/index",
   },
   {
+    path: "/ledger",
+    title: "账单",
+    component: "@/pages/mobile/ledger/index",
+  },
+  {
     path: "/threejs-test",
     title: "threejs测试",
     component: "@/pages/mobile/threejs-test/index",

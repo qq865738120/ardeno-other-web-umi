@@ -4,7 +4,7 @@ export default defineConfig({
   define: {
     APP_ENV: "dev",
     // API_HOST: "https://server-test.ddnszwj.top",
-    API_HOST: "http://127.0.0.1:3001",
+    API_HOST: "http://10.91.42.89:3001",
   },
   proxy: {
     "/api": {

@@ -3,10 +3,11 @@ import { defineConfig } from "umi";
 export default defineConfig({
   define: {
     APP_ENV: "prod",
-    API_HOST: "https://server.ddnszwj.top",
+    API_HOST: "http://frp.ddnszwj.top:3000",
   },
   hash: true,
-  chunks: ["commons", "libs", "vendors", "umi"],
+  // chunks: ["commons", "libs", "vendors", "umi"],
+  chunks: ["commons", "umi"],
   chainWebpack: function (config, { webpack }) {
     config.merge({
       optimization: {

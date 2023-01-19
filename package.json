@@ -24,7 +24,9 @@
   },
   "dependencies": {
     "@ant-design/pro-layout": "^6.5.0",
-    "@mojs/core": "^1.0.3",
+    "@antv/f2": "^4.0.41",
+    "@antv/f2-react": "^4.0.41",
+    "@mojs/core": "1.0.3",
     "@umijs/preset-react": "1.x",
     "antd": "^4.14.0",
     "antd-mobile": "^5.0.0-beta.26",
@@ -33,7 +35,7 @@
     "swiper": "^7.4.1",
     "three": "^0.134.0",
     "typed.js": "^2.0.11",
-    "typeit-react": "^2.2.0",
+    "typeit-react": "2.2.0",
     "umi": "^3.4.2"
   },
   "devDependencies": {
