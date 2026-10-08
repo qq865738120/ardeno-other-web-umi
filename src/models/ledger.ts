@@ -240,7 +240,7 @@ const LedgerModel: LedgerModelType = {
         }
         const index = monthTypeData[monthIndex].findIndex(it => it.type === item.type);
         if (index > -1) {
-          monthTypeData[index][monthIndex].value += item.costAmount;
+          monthTypeData[monthIndex][index].value += item.costAmount;
         } else {
           monthTypeData[monthIndex].push({ type: item.type, value: item.costAmount })
         }

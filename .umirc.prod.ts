@@ -3,7 +3,7 @@ import { defineConfig } from "umi";
 export default defineConfig({
   define: {
     APP_ENV: "prod",
-    API_HOST: "http://frp.ddnszwj.top:3000",
+    API_HOST: "http://ardeno.fun:3000",
   },
   hash: true,
   // chunks: ["commons", "libs", "vendors", "umi"],

@@ -51,7 +51,7 @@ const PieChart: FC<HistogramProps> = ({ data, xField = 'type', yField = 'ratio',
           label2={(data: any) => {
             return {
               fill: '#000000',
-              text: '¥' + data[valueField].toFixed(2) + '（' + data[yField] * 100 + '%）',
+              text: '¥' + data[valueField].toFixed(2) + '（' + (data[yField] * 100).toFixed(0) + '%）',
               fontWeight: 500,
               fontSize: 10,
             };
